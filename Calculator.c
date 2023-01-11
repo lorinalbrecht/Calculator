@@ -37,7 +37,7 @@ int main()
         printf("Choose [3] for *\n");
         printf("Choose [4] for /\n");
         printf("--------------------\n");
-        printf("Choose: ");
+        printf("Choose: "); 
         scanf("%d", &operator);
         // Checking if the Operator equals 1, 2, 3 or 4
         if (operator == 1 || operator == 2 || operator == 3 || operator == 4)
@@ -96,7 +96,7 @@ int main()
     }
     else
     {
-        printf("%.2lf %c %.2lf = %.01lf\n", value_1, operator, value_2, result);
+        printf("%.2lf %c %.2lf = %.0lf\n", value_1, operator, value_2, result);
     }
 
     // Return Value 0 for Main Function
