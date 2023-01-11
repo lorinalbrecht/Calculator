@@ -37,8 +37,8 @@ double enter_value(short round) // Parameter Round
 int main()
 {
     // Declaration of Variable
-    int operator;
-    int var_stop = 1; // Variable to stop the input while it is true
+    char operator;
+    int loop_stop = 1; // Variable to stop the input while it is true
     double value_1 = 0;
     double value_2 = 0;
     double result = 0;
@@ -48,7 +48,7 @@ int main()
     printf("--------------\n\n");
     
     // while loop to Select Operator
-    while (var_stop == 1)
+    while (loop_stop == 1)
     {
         // Printing Operator Selecting Menue
         printf("Please select the operator you want to use: \n");
@@ -56,17 +56,18 @@ int main()
         printf("Choose [2] for -\n");
         printf("Choose [3] for *\n");
         printf("Choose [4] for /\n");
-        printf("--------------------\n... ");
+        printf("--------------------\n");
+        printf("Choose: ");
         scanf("%d", &operator);
         // Checking if the Operator equals 1, 2, 3 or 4
         if (operator == 1 || operator == 2 || operator == 3 || operator == 4)
         {
-            var_stop = 0; // Changing var_stop to 0 to stop the while loop
+            loop_stop = 0; // Changing var_stop to 0 to stop the while loop
         }
         else
         {
             printf("Your Enter is Invalid. Try again\n\n");
-            var_stop = 1; // Resetting var_stop to 1 to continue the while loop
+            loop_stop = 1; // Resetting var_stop to 1 to continue the while loop
         }
     }
 
@@ -86,26 +87,36 @@ int main()
         // Case 1 is Plus
         case 1:
             result = value_1 + value_2;
-            printf("%.2lf + %.2lf equals %.2lf\n", value_1, value_2, result);
+            operator = '+';
             break;
         // Case 2 is Minus
         case 2:
             result = value_1 - value_2;
-            printf("%.2lf - %.2lf equals %.2lf\n", value_1, value_2, result);
+            operator = '-';
             break;
         // Case 3 is Multiple
         case 3:
             result = value_1 * value_2;
-            printf("%.2lf * %.2lf equals %.2lf\n", value_1, value_2, result);
+            operator = '*';
             break;
         // Case 4 is Divide
         case 4:
             result = value_1 / value_2;
-            printf("%.2lf / %.2lf equals %.2lf\n", value_1, value_2, result);
+            operator = '/';
             break;
         // default case (should not happen)
         default:
             printf("No Option\n");
+    }
+
+    // Output of the Result
+    if (result != (int)result)
+    {
+        printf("%.2lf %c %.2lf = %.2lf\n", value_1, operator, value_2, result);
+    }
+    else
+    {
+        printf("%.2lf %c %.2lf = %.01lf\n", value_1, operator, value_2, result);
     }
 
     // Return Value 0 for Main Function
