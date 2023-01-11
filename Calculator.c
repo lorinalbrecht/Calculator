@@ -10,22 +10,22 @@ Update              11. January 2022
 // Include of Functions
 #include <stdio.h>
 
-// Declaration of Functions
+// Function to enter User Input Value
 double enter_value(short round);
 
 // Main Function
 int main()
 {
     // Declaration of Variable
-    char operator;
-    int loop_stop = 1; // Variable to stop the input while it is true
-    double value_1 = 0;
-    double value_2 = 0;
-    double result = 0;
+    char operator; // Variable to select Operator
+    short loop_stop = 1; // Variable to stop the input while it is true
+    double value_1 = 0; // Input Value 1 from User
+    double value_2 = 0; // Input Value 2 from User
+    double result = 0; // Result of the Operation with value_1 and value_2
 
     // Output of Title of the Program
-    printf("Taschenrechner\n");
-    printf("--------------\n\n");
+    printf("Calculator\n");
+    printf("--------------------\n\n");
     
     // while loop to Select Operator
     while (loop_stop == 1)
